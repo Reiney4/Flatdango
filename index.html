@@ -1,51 +1,33 @@
 <!DOCTYPE html>
-<html lang="en">
-
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="./style.css" />
-  <title>Flatdango by Valerie</title>
-</head>
-
-<body>
-  <nav class="navbar bg-secondary">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="#">
-        <img src="./logo.png" alt="Logo" width="100" height="50" class="d-inline-block align-text-top">
-        <a class="navbar-brand text-light  me-3" href="index.html">Flatiron Movies</a>
-      </a>
-      <ul class="navbar-nav me-auto d-flex flex-row float-end">
-        <li class="nav-item me-5">
-          
-        </li>
-
-      </ul>
-      <form id="form" class="d-flex" role="search">
-        <input class="form-control me-6" type="search" placeholder="Search movie" id="search">
-        <button type="button" class="btn btn-danger ms-3" id="searchBtn"><i class="fa fa-search"
-            aria-hidden="true"></i></button>
-      </form>
-
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flatdango by Valerie</title>
+    <link rel="stylesheet" type="text/css" href="./style.css" />
+  </head>
+  <body>
+    <div class="logo">
+      <h1>Flatdango</h1>
     </div>
+      <div class="imageInfo">
+      <div id="detailed-info">
+        <p id="name">Movie's Name</p>
+        <img
+          id="poster"
+          src="movie"
+          alt=""
+        /><!--  movie poster and name -->
 
-  </nav>
-  <!-- grid -->
-    <ul id="films">
-    <div id="film-line">
-    <div id="film-row">
+        
+        <h4>: <span id="vote-count">0</span></h4>
+        <form id="tickets-form">
+          <input type="text" placeholder="Tickets" id="tickets" name="tickets" />
+          <input type="submit" value="tickets" />
+        </form>
+        
+      </div>
     </div>
-    </div><p></p>
-    </ul>
-    <div id="card"> 
-
-    </div>
-    <div id="minions" class="animation">
-      <h4>get your tickets 👉🎄<br>christmas offer </h4>
-      <img id="animation"src="./minions-shh.gif" />
-    </div>
-  <script src="./index.js"></script>
-</body>
-
+    <script src="./index.js"></script>
+  </body>
 </html>

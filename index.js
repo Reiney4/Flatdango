@@ -1,54 +1,54 @@
-const url ="https://api.npoint.io/e8d1576c65bfd8f7e62e/films/"
-fetch(`${url}`)
+function fetchFilms() {
+  const url = "https://api.npoint.io/e8d1576c65bfd8f7e62e/films/";
+
+  fetch(url)
     .then(response => response.json())
     .then(data => {
-    }); data.forEach(movie => {
-      const li = document.createElement('li');
-      li.classList.add('pointer', 'bold-italic-text');
-      li.innerHTML = movie.title;
-      
-      const filmCard = document.createElementbyClass;
-      filmCard.classList.add('film-card');
-      filmCard.innerHTML = `
-        <img src="${movie.poster}" />
-        <p class="bold-text">${movie.description}</p>
-        <p><span class="highlight bold-text">Runtime: ${movie.runtime}</span></p>
-        <p><span class="highlight bold-text">Showtime: ${movie.showtime}</span></p>
-      `;
-      document.getElementById('minions').style.display= "none"
-      // initate p tag element to show number of tickets
-      const tickets = document.createElement("p");
-      tickets.classList.add()
-      tickets.innerHTML = `Available tickets: ${(movie.capacity) - (movie.tickets_sold)}`;
-      // append the p tag 
-      filmCard.appendChild(tickets);
-   
-      const btn = document.createElement("button");
-      btn.textContent = "Get ticket";
-      // event listener to decrement ticket on dom
-      btn.addEventListener('click', () => {
-        //check if tickets are sold out then print alert
-        if (parseInt(tickets.innerText.split(': ')[1]) === 0) {
-          alert("sorry ticket deplited");
-        } else {
-          //reduce number of tickets 
-          tickets.innerText = `Available tickets: ${parseInt(tickets.innerText.split(': ')[1]) - 1}`;
-        }
-      });
-      filmCard.appendChild(btn);
+      const ul = document.createElement('ul'); // Create a new unordered list
+      data.forEach(movie => {
+        const li = document.createElement('li');
+        li.classList.add('pointer', 'bold-italic-text');
+        li.innerHTML = movie.title;
 
-      li.addEventListener('click', () => {
-        div.innerText=""
-        div.appendChild(filmCard);
-         if (!filmCard.classList.contains('active')) {
-          filmCard.classList.add('active');  
+        li.addEventListener('click', () => {
+          const div = document.getElementById('div');
+          div.innerText = ""; // Clear previous movie details
+
+          const filmCard = document.createElement('div');
+          filmCard.classList.add('film-card');
+          filmCard.innerHTML = `
+            <img src="${movie.poster}" />
+            <p class="bold-text">${movie.description}</p>
+            <p><span class="highlight bold-text">Runtime: ${movie.runtime}</span></p>
+            <p><span class="highlight bold-text">Showtime: ${movie.showtime}</span></p>
+          `;
+          document.getElementById('minions').style.display = "none";
+
+          const tickets = document.createElement("p");
+          tickets.classList.add("tickets");
+          tickets.innerHTML = `Available tickets: ${movie.capacity - movie.tickets_sold}`;
+          filmCard.appendChild(tickets);
+
+          const btn = document.createElement("button");
+          btn.textContent = "Get ticket";
+          btn.addEventListener('click', () => {
+            if (parseInt(tickets.innerText.split(': ')[1]) === 0) {
+              alert("Sorry, tickets are depleted.");
+            } else {
+              tickets.innerText = `Available tickets: ${parseInt(tickets.innerText.split(': ')[1]) - 1}`;
+            }
+          });
+          filmCard.appendChild(btn);
+
           div.appendChild(filmCard);
+        });
 
-        }
-        
+        ul.appendChild(li);
       });
-      ul.appendChild(li);
+
+      const filmListContainer = document.getElementById('film-list-container');
+      filmListContainer.appendChild(ul);
     });
-  
-  fetchFilms();
-  
+}
+
+fetchFilms();
