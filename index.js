@@ -4,7 +4,8 @@ function fetchFilms() {
   fetch(url)
     .then(response => response.json())
     .then(data => {
-      const ul = document.createElement('ul'); // Create a new unordered list
+      const ul = document.getElementById('film-list');
+
       data.forEach(movie => {
         const li = document.createElement('li');
         li.classList.add('pointer', 'bold-italic-text');
@@ -12,7 +13,7 @@ function fetchFilms() {
 
         li.addEventListener('click', () => {
           const div = document.getElementById('div');
-          div.innerText = ""; // Clear previous movie details
+          div.innerHTML = ""; // Clear previous movie details
 
           const filmCard = document.createElement('div');
           filmCard.classList.add('film-card');
@@ -45,9 +46,6 @@ function fetchFilms() {
 
         ul.appendChild(li);
       });
-
-      const filmListContainer = document.getElementById('film-list-container');
-      filmListContainer.appendChild(ul);
     });
 }
 
