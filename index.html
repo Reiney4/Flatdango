@@ -1,16 +1,16 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Flatdango by Valerie</title>
-    <link rel="stylesheet" type="text/css" href="style.css" />
-  </head>
-  <body>
-    <div class="logo">
-      <h1>FLATDANGO</h1>
-    <nav class="navbar bg-secondary"></nav>/div>
+<html lang="en">
 
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./style.css" />
+  <title>Flatdango by Valerie</title>
+</head>
+
+<body>
+  <nav class="navbar bg-secondary">
     <div class="container-fluid">
       <a class="navbar-brand" href="#">
         <img src="./logo.png" alt="Logo" width="100" height="50" class="d-inline-block align-text-top">
@@ -22,19 +22,30 @@
         </li>
 
       </ul>
-      </div>
-    
-
-    
-        <form id="Tickets-form">
-          <input type="text" placeholder="Available tickets" id="tickets" name="votes" />
-          <input type="submit" value="Buy Tickets" />
-        </form>
-      
-    <div id = "maneour" class ="animation">
-<h4>Get your tickets</h4>
+      <form id="form" class="d-flex" role="search">
+        <input class="form-control me-6" type="search" placeholder="Search movie" id="search">
+        <button type="button" class="btn btn-danger ms-3" id="searchBtn"><i class="fa fa-search"
+            aria-hidden="true"></i></button>
+      </form>
 
     </div>
-    <script src="src/index.js"></script>
-  </body>
+
+  </nav>
+  <!-- grid -->
+    <ul id="films">
+    <div id="film-line">
+    <div id="film-row">
+    </div>
+    </div><p></p>
+    </ul>
+    <div id="card"> 
+
+    </div>
+    <div id="minions" class="animation">
+      <h4>get your tickets 👉🎄<br>christmas offer </h4>
+      <img id="animation"src="./minions-shh.gif" />
+    </div>
+  <script src="./index.js"></script>
+</body>
+
 </html>
