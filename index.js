@@ -12,17 +12,20 @@ function fetchFilms() {
         li.innerHTML = movie.title;
 
         li.addEventListener('click', () => {
-          const div = document.getElementById('div');
-          div.innerHTML = ""; // Clear previous movie details
+          const container = document.getElementById('container');
+          console.log(container)
+          // div.innerHTML = ""; // Clear previous movie details
 
           const filmCard = document.createElement('div');
-          filmCard.classList.add('film-card');
+          // filmCard.classList.add('film-card');
           filmCard.innerHTML = `
             <img src="${movie.poster}" />
             <p class="bold-text">${movie.description}</p>
             <p><span class="highlight bold-text">Runtime: ${movie.runtime}</span></p>
             <p><span class="highlight bold-text">Showtime: ${movie.showtime}</span></p>
+            <p>Available tickets: ${movie.capacity - movie.tickets_sold}</p>
           `;
+          console.log(filmCard)
           // document.getElementById('minions').style.display = "none";
 
           const tickets = document.createElement("p");
@@ -41,7 +44,7 @@ function fetchFilms() {
           });
           filmCard.appendChild(btn);
 
-          div.appendChild(filmCard);
+          container.appendChild(filmCard);
         });
 
         ul.appendChild(li);

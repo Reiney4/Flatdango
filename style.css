@@ -33,7 +33,7 @@ li:hover {
    background-color: #414854;
 }
 .film-card {
-  display: none;
+  display:none;
   background-color: #414854;
   padding: 5px;
   border-radius: 5px;
@@ -44,7 +44,9 @@ li:hover {
   height: 860px;
   position: relative;
 }
-
+.show-film {
+  display: flex;
+}
 .active {
   display: block;
 }
