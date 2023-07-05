@@ -1,5 +1,5 @@
 function fetchFilms() {
-  const url = "https://api.npoint.io/e8d1576c65bfd8f7e62e/films/";
+  const url = "https://api.npoint.io/12b5b9a3f8163e2267fb/films/";
 
   fetch(url)
     .then(response => response.json())
@@ -23,7 +23,7 @@ function fetchFilms() {
             <p><span class="highlight bold-text">Runtime: ${movie.runtime}</span></p>
             <p><span class="highlight bold-text">Showtime: ${movie.showtime}</span></p>
           `;
-          document.getElementById('minions').style.display = "none";
+          // document.getElementById('minions').style.display = "none";
 
           const tickets = document.createElement("p");
           tickets.classList.add("tickets");
@@ -49,4 +49,4 @@ function fetchFilms() {
     });
 }
 
-fetchFilms();
+document.addEventListener('DOMContentLoaded', fetchFilms)
