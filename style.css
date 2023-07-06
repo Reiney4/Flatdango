@@ -33,16 +33,19 @@ li:hover {
    background-color: #414854;
 }
 .film-card {
-  display:none;
+  display:flex;
   background-color: #414854;
   padding: 5px;
   border-radius: 5px;
   box-shadow: 0 0 10px #7d2e2e;
   margin: 10px;
-  float: right;
+  color: rgba(0, 0, 0, 0.75);
   width: 435px;
   height: 860px;
   position: relative;
+}
+.container {
+  display: flex;
 }
 .show-film {
   display: flex;

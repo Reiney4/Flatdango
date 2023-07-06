@@ -20,7 +20,7 @@ function fetchFilms() {
           // filmCard.classList.add('film-card');
           filmCard.innerHTML = `
             <img src="${movie.poster}" />
-            <p class="bold-text">${movie.description}</p>
+            <p class="bold-text">${movie.description}</p>       
             <p><span class="highlight bold-text">Runtime: ${movie.runtime}</span></p>
             <p><span class="highlight bold-text">Showtime: ${movie.showtime}</span></p>
             <p>Available tickets: ${movie.capacity - movie.tickets_sold}</p>
