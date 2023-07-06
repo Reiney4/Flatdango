@@ -1,7 +1,7 @@
 # Flatdango
 
 
-This is the Flatacuties app, a JavaScript application that fetches data from an API and dynamically manipulates the DOM to display cute animal illustrations and allow the user to vote for their favourite animal.
+This is the Flatdango app, a JavaScript application that fetches data from an API and dynamically manipulates the DOM to display movie details and allows the user to purchase movie tickets online.
 
 
 ## Description
@@ -47,7 +47,7 @@ To access the movie details click on the movie name.
 
 The application fetches data from the following API endpoint:
 
-API Endpoint: [ [label](https://api.npoint.io/12b5b9a3f8163e2267fb/films/0)]
+API Endpoint: [ [label](https://api.npoint.io/12b5b9a3f8163e2267fb/films/)]
 
 Replace `[API Endpoint URL]` with the actual API endpoint you want to fetch data from.
 ## Author
