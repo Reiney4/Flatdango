@@ -1,110 +1,18 @@
 body{
-  background: lightblue;
+  background-color: darkgrey;
+}
+#filmlist{
+  display: none;
 }
 
-div {
-   margin: 0;
-   padding: 0;
-   font-family: sans-serif;
-   display: flex;
-   flex-wrap: wrap;
+#details{
+  font-size: 20px;
 }
 
-ul {
-   list-style: none;
-   margin: 0;
-   padding: 5px;
-   float: left;
-   width: 30%;
-   margin-right: 10%;
+#image{
+  width: 400px;
 }
 
-li {
-   cursor: pointer;
-   background-color:#fa4118; 
-   font-family: serif;
-   color: #fff;
-   padding: 5px;
-   margin: 10px 0;
-   border-radius: 5px;
-}
-
-li:hover {
-   background-color: #414854;
-}
-.film-card {
-  display:flex;
-  background-color: #414854;
-  padding: 5px;
-  border-radius: 5px;
-  box-shadow: 0 0 10px #7d2e2e;
-  margin: 10px;
-  color: rgba(0, 0, 0, 0.75);
-  width: 435px;
-  height: 860px;
-  position: relative;
-}
-.container {
-  display: flex;
-}
-.show-film {
-  display: flex;
-}
-.active {
-  display: block;
-}
-
-img {
-  float: left;
-  margin: 5px;
-  border-radius: 10px;
-  height: 500px;
-  width: 420px;
-}
-
-button {
-  background-color: #fa4118;
-  color: #fff;
-  border: none;
-  padding: 5px 10px;
-  border-radius: 5px;
-  cursor: pointer;
-  float: right-bottom;
-  position: absolute;
-  bottom: -6900;
-  right: -180px;
-  margin: 5px;
-  margin-left: 400px;
-  margin-bottom: 500px;
-  border-radius: 10px;
-}
-button:hover {
-  background-color: #414854;
-}
-
-.navbar-brand img{
- height: 50px;
- width: 80px;
-}
-
-#form{
- padding-right: 40px;
-}
-#searchBtn{
- margin-bottom: 23px;
- margin-right: 8px;
-}
-h2{
- color: #fff;
-}
-p{
- color: #fff;
- font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-#minions {
- margin-top: 50px;
-}
-h4{
- color: #fa4118;
- padding-top: 100px;
+#menu:hover{
+  color: brown;
 }

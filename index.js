@@ -1,55 +1,97 @@
-function fetchFilms() {
-  const url = "https://api.npoint.io/12b5b9a3f8163e2267fb/films/";
+fetch('http://localhost:3000/films')
+.then(res=> res.json())
+.then(films=>{
+    films.forEach((film)=>displayFilmList(film))
+})
 
-  fetch(url)
-    .then(response => response.json())
-    .then(data => {
-      const ul = document.getElementById('film-list');
+//creating a variable for menu
+const menu = document.getElementById("menu")
+const filmList =document.getElementById("filmlist")
 
-      data.forEach(movie => {
-        const li = document.createElement('li');
-        li.classList.add('pointer', 'bold-italic-text');
-        li.innerHTML = movie.title;
+//adding event listener to the menu 
+//when clicked it will display or not if clicked again
+menu.addEventListener("click", function(){
+    if(filmList.style.display!=="none"){
+        filmList.style.display="none"
+    }
+    else{
+        filmList.style.display="block"
+    }
+})
 
-        li.addEventListener('click', () => {
-          const container = document.getElementById('container');
-          console.log(container)
-          // div.innerHTML = ""; // Clear previous movie details
+//function for displaying the movie details
+function displayFilmList(film){
+    
+ //creating a li element
+    const listName = document.createElement("li")
+    filmList.appendChild(listName)
 
-          const filmCard = document.createElement('div');
-          // filmCard.classList.add('film-card');
-          filmCard.innerHTML = `
-            <img src="${movie.poster}" />
-            <p class="bold-text">${movie.description}</p>       
-            <p><span class="highlight bold-text">Runtime: ${movie.runtime}</span></p>
-            <p><span class="highlight bold-text">Showtime: ${movie.showtime}</span></p>
-            <p>Available tickets: ${movie.capacity - movie.tickets_sold}</p>
-          `;
-          console.log(filmCard)
-          // document.getElementById('minions').style.display = "none";
+    //linking the names on the list with the json file objects
+    const link = document.createElement("a")
+    link.href = `http://localhost:3000/films${film.id}`
+    link.textContent = `${film.title}`
+    listName.appendChild(link)
 
-          const tickets = document.createElement("p");
-          tickets.classList.add("tickets");
-          tickets.innerHTML = `Available tickets: ${movie.capacity - movie.tickets_sold}`;
-          filmCard.appendChild(tickets);
+//adding an event listener to the link
+link.addEventListener("click", (e) =>{
+    e.preventDefault()
 
-          const btn = document.createElement("button");
-          btn.textContent = "Get ticket";
-          btn.addEventListener('click', () => {
-            if (parseInt(tickets.innerText.split(': ')[1]) === 0) {
-              alert("Sorry, tickets are depleted.");
-            } else {
-              tickets.innerText = `Available tickets: ${parseInt(tickets.innerText.split(': ')[1]) - 1}`;
-            }
-          });
-          filmCard.appendChild(btn);
 
-          container.appendChild(filmCard);
-        });
+    //creating variables for the objects in the json file
+    const name = document.querySelector("#headers h3")
+    name.innerHTML=`${film.title}`
+    console.log(name)
 
-        ul.appendChild(li);
-      });
-    });
+    //displaying the run time
+    const runtime =document.getElementById("runtime")
+    console.log(runtime)
+    runtime.textContent=`Runtime : ${film.runtime}`
+
+    //displaying the show time
+    const showtime = document.getElementById("showtime")
+    console.log(showtime)
+    showtime.textContent=`Showtime : ${film.showtime}`
+
+    //displaying the number of available seats
+    const availableTickets =document.getElementById("availabletickets")
+    const result = film.capacity - film.tickets_sold
+    console.log(result)
+    availableTickets.textContent=`Available Tickets : ${result}`
+
+    //displaying the image
+    const image = document.querySelector("#section img")
+    image.src=film.poster
+    console.log(image)
+
+    const description = document.querySelector("p")
+    description.textContent=`description : ${film.description}`
+
+    //creating a button using inner html
+    const mybutton = document.getElementById("mybutton")
+    mybutton.innerHTML=`
+    <button id="button">BUY TICKET</button>
+    `        //styling the button
+    let count = result
+    const button = document.getElementById("button")
+    button.style.backgroundColor="green"
+    button.style.width="150px"
+    button.style.height="50px"
+    button.style.fontSize="20px"
+
+    //adding event listener to the button 
+    button.addEventListener("click", function(){
+
+        //subtracting the the number of available seats
+        count--;
+        availableTickets.textContent=`Available Tickets : ${count}`
+
+        //preventing the available number from reducing bellow 0
+        if(count <= 0){
+            button.textContent="Sold out"
+            availableTickets.textContent="Available Tickets : Sold out"
+            button.style.backgroundColor="red"
+        }
+    })
+})
 }
 
-document.addEventListener('DOMContentLoaded', fetchFilms)
