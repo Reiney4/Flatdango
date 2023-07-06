@@ -1,59 +1,39 @@
-# Flatdango
+# FLATDANGO
+This is the Flatdango app, a JavaScript application that fetches data from an API and dynamically manipulates the DOM to display movie details and allows users to purchase movie tickets online.
+
+## Table of content
+* Description 
+* Installation requirement
+* Technology used
+* Licence
+* Authors info
+
+# DESCRIPTION
+The Flatdango app fetches data from an API and dynamically manipulates the DOM to displaymovie details.
+ It showcases how to use JavaScript to interact with APIs and dynamically create HTML elements.
+
+To buy a movie ticket click on the buy button.
+
+# Installation process
+## Frontend
+* Create your folder using the command `git clone your ssh or https keys`
+* Navigate to the code challenge directory using `cd Flatdango`
+* copy the path to `index.html` and open it in the browser on a new tab
 
 
-This is the Flatdango app, a JavaScript application that fetches data from an API and dynamically manipulates the DOM to display movie details and allows the user to purchase movie tickets online.
+## Backend
+* Install the json-server using the command `npm install -g json-server`
+* To get backend started run this command `json-server --watch db.json`
+* Test your server by visting this route in the browser `http://localhost:3000/films`
+
+# TECHNOLOGY USED
+Html
+CSS
+Javascript
 
 
-## Description
+# LICENSE
+MIT license
 
-The Flatdango app fetches data from an API and dynamically manipulates the DOM to display the movie poster, showtime and runtime  . It showcases how to use JavaScript to interact with APIs and dynamically create HTML elements.
-
-To access the movie details click on the movie name.
-## Usage
-
-1. Clone the repository:
-
-`https://github.com/Reiney4/Flatdango`
-2. Navigate to the project folder
-
-`cd Flatdango`
-
-3. Install json-server tool with the command
-
-`npm install -g json-server`
-
-
- 4. Run db.json file using the command
- `json-server --watch db.json`
-
- 5.Open the index.html file on the server and access the index.html file using this URL
-
- ` http://localhost:3000/films`
-
-
-6. The application will send a GET request to the API endpoint to fetch the movie details.
-
-7. Once the data is fetched, the app will create HTML elements to display the movie details on the page.
-
-8. Scroll through the page to explore the various movies.
-
-## Technologies Used
-
-- JavaScript
-- HTML
-- CSS
-
-## API Endpoint
-
-The application fetches data from the following API endpoint:
-
-API Endpoint: [ [label](https://api.npoint.io/12b5b9a3f8163e2267fb/films/)]
-
-Replace `[API Endpoint URL]` with the actual API endpoint you want to fetch data from.
-## Author
-
-Author: [Valerie Kandagor]
-
-## License
-
-This project is licensed under the [MIT License].
+# AUTHORS INFO
+[Valerie Kandagor]
